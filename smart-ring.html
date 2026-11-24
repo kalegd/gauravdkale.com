@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="View live heart rate from a VR11 ring over Bluetooth.">
+  <meta name="theme-color" content="#09090b">
+  <title>Live heart rate | Gaurav D. Kale</title>
+  <link rel="icon" href="./assets/gaurav-kale-avatar.jpg" type="image/jpeg" sizes="128x128">
+  <link rel="stylesheet" href="./src/smart-ring.css">
+  <script type="module" src="./src/smart-ring.js?v=5"></script>
+</head>
+<body>
+  <header class="page-header layout">
+    <a class="back-link" href="./index.html#now"><span aria-hidden="true">←</span> Portfolio</a>
+  </header>
+
+  <main class="layout">
+    <h1>Live heart rate</h1>
+    <p class="intro">Connect your VR11 ring over Bluetooth.</p>
+
+    <section class="monitor" aria-label="Heart rate monitor">
+      <div class="monitor-body">
+        <div class="readout">
+          <span class="readout-value" id="bpm" aria-hidden="true">—</span>
+          <span class="readout-unit" aria-hidden="true">BPM</span>
+          <span class="visually-hidden" id="reading-text">No heart rate reading</span>
+        </div>
+        <div class="ring-art" aria-hidden="true"></div>
+      </div>
+
+      <div class="monitor-controls">
+        <div class="session" role="status">
+          <p class="session-status" id="session-status" data-state="idle">Ring disconnected</p>
+          <p class="session-hint" id="session-hint">Your VR11 may appear as VRing in the Bluetooth picker.</p>
+        </div>
+        <p class="session-hint" id="beat-interval" hidden></p>
+        <div class="actions">
+          <button type="button" class="primary-button" id="ring-action" disabled>Connect ring</button>
+          <button type="button" class="secondary-button" id="ring-disconnect" hidden>Disconnect ring</button>
+        </div>
+        <noscript><p>Enable JavaScript to connect a ring.</p></noscript>
+      </div>
+    </section>
+
+    <div class="notes">
+      <p>Readings stay in this tab.</p>
+      <details id="bluetooth-diagnostics" open hidden>
+        <summary>Bluetooth diagnostics</summary>
+        <p id="bluetooth-counts">Connect the ring to check which readings it sends.</p>
+      </details>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,4 +1,4 @@
-import { details } from "./content.js";
+import { details } from "./content.js?v=16";
 import { startScene } from "./scene.js?v=14";
 
 const scene = startScene();

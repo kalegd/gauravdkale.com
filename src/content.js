@@ -18,7 +18,8 @@ export const details = {
     category: "Current project",
     title: "Live smart ring metrics",
     subtitle: "Wearable data",
-    summary: "Building a website that shows metrics from a smart ring as readings arrive. The goal is to make it easy to see live readings without needing to download or open an app.",
+    summary: "Connect your VR11 ring over Bluetooth to see live heart rate readings in your browser.",
+    link: ["Open live heart rate", "./smart-ring.html"],
   },
   bhutan: {
     category: "Experience",

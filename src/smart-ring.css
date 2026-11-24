@@ -1,0 +1,197 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+  background: #09090b;
+  color: #f5f2ee;
+  --muted: #b8b2b8;
+  --line: #353038;
+  --accent: #f2ca96;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; }
+p, h1 { margin: 0; }
+a { color: inherit; }
+button { font: inherit; }
+[hidden] { display: none; }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.layout {
+  width: min(42rem, 100% - 2.5rem);
+  margin-inline: auto;
+}
+
+.page-header { padding-block: 1.75rem; }
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  color: var(--muted);
+  font-size: .875rem;
+  text-decoration: none;
+}
+
+.back-link:hover { color: #f5f2ee; }
+.back-link span { color: var(--accent); font-size: 1.125rem; }
+
+main { padding-block: clamp(1.75rem, 7vh, 4.75rem) 3rem; }
+
+h1 {
+  font-size: clamp(2.5rem, 7vw, 4.5rem);
+  font-weight: 570;
+  line-height: 1.02;
+  letter-spacing: -.075em;
+}
+
+.intro {
+  margin-top: .85rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.monitor {
+  margin-top: clamp(1.6rem, 5vw, 2.5rem);
+  border: 1px solid var(--line);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  background: #131115;
+}
+
+.monitor-body {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: clamp(10.5rem, 33vw, 14rem);
+  padding: clamp(1.25rem, 5vw, 2.5rem);
+  overflow: hidden;
+  isolation: isolate;
+  background: radial-gradient(ellipse at 80% 45%, #3a2b25, transparent 65%), #161317;
+}
+
+.readout {
+  display: flex;
+  align-items: baseline;
+  gap: .65rem;
+}
+
+.readout-value {
+  font-size: clamp(4rem, 14vw, 7.5rem);
+  font-variant-numeric: tabular-nums;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -.085em;
+}
+
+.readout-unit {
+  color: var(--accent);
+  font-size: .75rem;
+  font-weight: 650;
+  letter-spacing: .16em;
+}
+
+.ring-art {
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  right: -2%;
+  width: clamp(10rem, 39vw, 17rem);
+  aspect-ratio: 1;
+  translate: 0 -50%;
+  rotate: -28deg;
+  scale: .85 1;
+  border: 1px solid #f2ca9638;
+  border-radius: 50%;
+  box-shadow: inset 0 0 2.5rem #f2ca9615, 0 0 2.5rem #f2ca9610;
+  background: radial-gradient(circle, transparent 46%, #f2ca9616 69%, transparent 70%);
+}
+
+.ring-art::before, .ring-art::after {
+  content: "";
+  position: absolute;
+  inset: 12%;
+  border: 1px solid #f2ca962c;
+  border-radius: inherit;
+}
+
+.ring-art::after { inset: 23%; border-color: #f2ca9620; }
+
+.monitor-controls {
+  padding: clamp(1.25rem, 4.5vw, 2rem);
+  border-top: 1px solid var(--line);
+}
+
+.session-status {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  font-size: .875rem;
+  font-weight: 650;
+}
+
+.session-status::before {
+  content: "";
+  flex: 0 0 .45rem;
+  height: .45rem;
+  border-radius: 50%;
+  background: #918894;
+}
+
+.session-status[data-state="monitoring"]::before {
+  background: var(--accent);
+  box-shadow: 0 0 .7rem #f2ca9670;
+}
+
+.session-hint, .notes {
+  color: var(--muted);
+  font-size: .875rem;
+  line-height: 1.55;
+}
+
+.session-hint { margin-top: .4rem; }
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .65rem;
+  margin-top: 1.25rem;
+}
+
+.actions button {
+  min-height: 2.75rem;
+  padding: .65rem 1.05rem;
+  border: 1px solid transparent;
+  border-radius: .6rem;
+  cursor: pointer;
+  font-size: .875rem;
+  font-weight: 650;
+}
+
+.actions button:disabled { opacity: .52; cursor: default; }
+.primary-button { background: var(--accent); color: #211812; }
+.primary-button:hover:not(:disabled) { background: #ffdfb6; }
+.actions .secondary-button { border-color: #534a55; background: transparent; color: #f5f2ee; }
+.secondary-button:hover:not(:disabled) { background: #252026; }
+
+.notes { margin-top: 1rem; }
+.notes details { margin-top: .65rem; }
+.notes summary { width: fit-content; cursor: pointer; color: #e5dde5; }
+.notes details p { max-width: 33rem; margin-top: .4rem; }
+
+@media (max-width: 28rem) {
+  .ring-art { right: -18%; }
+  .actions button { width: 100%; }
+}
