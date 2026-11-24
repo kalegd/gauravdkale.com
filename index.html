@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Gaurav D. Kale is a software engineer and founder building digital identity, trust infrastructure, and distributed systems.">
+  <meta name="theme-color" content="#09090b">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Gaurav D. Kale — Software engineer & founder">
+  <meta property="og:description" content="Selected work in digital identity, distributed systems, and live wearable data.">
+  <title>Gaurav D. Kale — Software engineer & founder</title>
+  <link rel="icon" href="./assets/gaurav-kale-avatar.jpg" type="image/jpeg" sizes="128x128">
+  <link rel="stylesheet" href="./src/styles.css">
+  <script type="module" src="./src/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="scene" aria-hidden="true">
+    <div class="scene-day"></div>
+    <div class="scene-atmosphere"></div>
+    <div class="scene-burst"></div>
+    <div class="scene-orbits"><i></i><i></i><i></i></div>
+    <div class="scene-fallback"></div>
+    <canvas id="particles"></canvas>
+    <div class="scene-shade"></div>
+    <div class="scene-blackout"></div>
+  </div>
+
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="#top" aria-label="Gaurav D. Kale, home">
+        <img src="./assets/gaurav-kale-avatar.jpg" alt="" width="34" height="34">
+        <span>Gaurav D. Kale</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#now">Now</a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="resume-link" href="./assets/gaurav-kale-resume.pdf" target="_blank" rel="noopener">Résumé<span class="sr-only"> (PDF, opens in a new tab)</span></a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="shell hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow hero-role"><span></span>Software engineer &amp; founder</p>
+          <h1 id="hero-title">Gaurav D. Kale</h1>
+          <p class="hero-description">I build trust infrastructure, digital identity systems, and software that scales.</p>
+          <a class="button button-hero" href="#work">View selected work</a>
+        </div>
+        <div class="hero-bottom">
+          <a class="scroll-link" href="#about"><span></span> Scroll to explore</a>
+          <div class="scene-controls">
+            <p class="cursor-hint"><span></span> Move your cursor over the particles</p>
+            <button class="motion-toggle" type="button" hidden>Pause motion</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about dark-section" id="about" aria-labelledby="about-title">
+      <div class="shell about-inner">
+        <div class="section-copy">
+          <p class="eyebrow">About</p>
+          <h2 id="about-title">Making complex systems dependable.</h2>
+          <p>I’m a software engineer and founder with more than a decade of experience building production systems, from Alexa at Amazon to financial infrastructure and digital identity.</p>
+          <p>I’m drawn to the places where cryptography, distributed systems, and product design meet. Much of my work starts with a question about who or what a system can trust.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="transition" aria-hidden="true"></div>
+
+    <section class="now bright-section" id="now" aria-labelledby="now-title">
+      <div class="shell now-inner">
+        <div class="section-copy">
+          <p class="eyebrow">Current work</p>
+          <h2 id="now-title">What I’m building now.</h2>
+          <p class="section-intro">Digital identity, credential verification, and live wearable data.</p>
+          <div class="project-list">
+            <article class="project">
+              <button type="button" class="project-trigger detail-trigger" data-detail="joa" aria-haspopup="dialog">
+                <span><strong>Just One Account</strong><span class="project-summary">Single sign-on designed for verified humans.</span></span>
+                <span class="plus" aria-hidden="true"></span>
+              </button>
+            </article>
+            <article class="project">
+              <button type="button" class="project-trigger detail-trigger" data-detail="registry" aria-haspopup="dialog">
+                <span><strong>Trusted Issuer Registry</strong><span class="project-summary">A registry for checking who issued a digital credential.</span></span>
+                <span class="plus" aria-hidden="true"></span>
+              </button>
+            </article>
+            <article class="project">
+              <button type="button" class="project-trigger detail-trigger" data-detail="ring" aria-haspopup="dialog">
+                <span><strong>Live smart ring metrics</strong><span class="project-summary">A website for viewing live data from a smart ring.</span></span>
+                <span class="plus" aria-hidden="true"></span>
+              </button>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="work bright-section" id="work" aria-labelledby="work-title">
+      <div class="shell work-inner">
+        <div class="work-heading">
+          <p class="eyebrow">Experience</p>
+          <h2 id="work-title">Selected work.</h2>
+          <p class="section-intro">Trading infrastructure, digital identity, and software in production.</p>
+        </div>
+        <ol class="work-list">
+          <li>
+            <button type="button" class="work-trigger detail-trigger" data-detail="bhutan" aria-haspopup="dialog">
+              <span class="work-entry"><strong>His Majesty’s Secretariat</strong><span>Lead Engineer · Kingdom of Bhutan</span></span>
+              <span class="work-date">2026 Jan-Dec</span><span class="plus" aria-hidden="true"></span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="work-trigger detail-trigger" data-detail="founder" aria-haspopup="dialog">
+              <span class="work-entry"><strong>Universal Verify / Digital Bacon</strong><span>Founder &amp; Solo Engineer</span></span>
+              <span class="work-date">2022–Present</span><span class="plus" aria-hidden="true"></span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="work-trigger detail-trigger" data-detail="amazon" aria-haspopup="dialog">
+              <span class="work-entry"><strong>Amazon</strong><span>Software Development Engineer II</span></span>
+              <span class="work-date">2020–2022</span><span class="plus" aria-hidden="true"></span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="work-trigger detail-trigger" data-detail="random" aria-haspopup="dialog">
+              <span class="work-entry"><strong>Random Access Software</strong><span>Co-founder &amp; Lead Engineer</span></span>
+              <span class="work-date">2018–2020</span><span class="plus" aria-hidden="true"></span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="work-trigger detail-trigger" data-detail="tax" aria-haspopup="dialog">
+              <span class="work-entry"><strong>TaxToken / BlockSentry</strong><span>Co-founder &amp; CTO</span></span>
+              <span class="work-date">2017–2018</span><span class="plus" aria-hidden="true"></span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="work-trigger detail-trigger" data-detail="capital" aria-haspopup="dialog">
+              <span class="work-entry"><strong>Capital One</strong><span>Software Engineer</span></span>
+              <span class="work-date">2015–2017</span><span class="plus" aria-hidden="true"></span>
+            </button>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="contact bright-section" id="contact" aria-labelledby="contact-title">
+      <div class="shell contact-inner">
+        <div class="section-copy">
+          <p class="eyebrow">Contact</p>
+          <h2 id="contact-title">Let’s build something meaningful.</h2>
+          <p class="section-intro">If you’re working on digital identity, developer tools, or another hard systems problem, I’d like to hear from you.</p>
+          <a class="button button-contact" href="mailto:kalegauravd@gmail.com">Get in touch</a>
+          <ul class="contact-links">
+            <li><a href="https://github.com/kalegd">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/gaurav-d-kale/">LinkedIn</a></li>
+            <li><a href="./assets/gaurav-kale-resume.pdf" target="_blank" rel="noopener">Résumé<span class="sr-only"> (PDF, opens in a new tab)</span></a></li>
+          </ul>
+        </div>
+        <footer class="site-footer"><span>© 2026 Gaurav D. Kale</span><a href="#top">Back to top</a></footer>
+      </div>
+    </section>
+  </main>
+
+  <dialog class="detail-panel" id="detail" aria-labelledby="detail-title">
+    <div class="detail-inner">
+      <button class="detail-close" type="button" aria-label="Close details" autofocus></button>
+      <p class="eyebrow" id="detail-category"></p>
+      <h2 id="detail-title"></h2>
+      <p class="detail-subtitle" id="detail-subtitle"></p>
+      <p class="detail-summary" id="detail-summary"></p>
+      <ul class="detail-highlights" id="detail-highlights"></ul>
+      <p class="detail-stack" id="detail-stack"></p>
+      <a class="detail-link" id="detail-link" hidden></a>
+    </div>
+  </dialog>
+</body>
+</html>
