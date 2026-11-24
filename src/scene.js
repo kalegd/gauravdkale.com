@@ -813,14 +813,12 @@ export function startScene() {
   const contact = document.querySelector("#contact");
   const footer = contact.querySelector(".site-footer");
   const nav = [...document.querySelectorAll(".site-nav a")];
-  const motion = matchMedia("(prefers-reduced-motion: reduce)");
-  const motionToggle = document.querySelector(".motion-toggle");
+  const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
   const narrow = matchMedia("(max-width: 640px)");
   const touch = matchMedia("(pointer: coarse)");
   const css = new Map();
   let renderer;
   let webgl = false;
-  let motionPaused = motion.matches;
   let raf = 0;
   let needsMeasurement = true;
   let landmarks;
@@ -871,7 +869,7 @@ export function startScene() {
   }
 
   function setCurrentSection(scroll, day) {
-    const tone = day > 0.55 ? "light" : "dark";
+    const tone = day >= 0.47 ? "light" : "dark";
     if (root.dataset.tone !== tone) root.dataset.tone = tone;
     const y = scroll + height * 0.36;
     const section = ["contact", "work", "now", "about"].find((name) => y >= landmarks[name]);
@@ -1044,16 +1042,15 @@ export function startScene() {
   }
 
   function setMotion() {
-    if (!motionPaused && !renderer) {
+    const animate = !reducedMotion.matches;
+    if (animate && !renderer) {
       try {
         renderer = makeRenderer(canvas, narrow.matches || touch.matches, queue);
       } catch (error) {
         console.warn("Particle rendering is unavailable.", error);
       }
     }
-    webgl = Boolean(renderer && !motionPaused);
-    motionToggle.hidden = !renderer && !motionPaused;
-    motionToggle.textContent = webgl ? "Pause motion" : "Play motion";
+    webgl = Boolean(renderer && animate);
     root.classList.toggle("has-webgl", webgl);
     canvas.hidden = !webgl;
     needsMeasurement = true;
@@ -1082,19 +1079,11 @@ export function startScene() {
   }
   root.addEventListener("pointerleave", releasePointer);
   window.addEventListener("blur", releasePointer);
-  motionToggle.addEventListener("click", () => {
-    motionPaused = !motionPaused;
-    setMotion();
-  });
-  motion.addEventListener("change", () => {
-    motionPaused = motion.matches;
-    setMotion();
-  });
+  reducedMotion.addEventListener("change", setMotion);
   canvas.addEventListener("webglcontextlost", (event) => {
     event.preventDefault();
     renderer = null;
     webgl = false;
-    motionToggle.hidden = true;
     canvas.hidden = true;
     root.classList.remove("has-webgl");
     needsMeasurement = true;
